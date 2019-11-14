@@ -14,6 +14,11 @@ namespace Coursework.DataAccessLayer
         { 
         }
         public DbSet<Customer> Customers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 
 }

@@ -8,9 +8,9 @@ namespace Coursework.Models
     public class Customer
     {
         public int ID { get; set; }
-        public int Price { get; set; }
-        public int Quantity { get; set; }
-        public string SaleType { get; set; }
-
+        public string Name { get; set; }
+        public string History { get; set; }
+        public bool LoyaltyCard { get; set; }
+        public bool BuyNowPayLater { get; set; }
     }
 }
