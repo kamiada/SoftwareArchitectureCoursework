@@ -14,7 +14,8 @@ namespace Coursework.DataAccessLayer
         { 
         }
         public DbSet<Customer> Customers { get; set; }
-       // public DbSet<Produkt> Produkts { get; set; }
+        public DbSet<SaleType> SaleTypes { get; set; }
+        public DbSet<Product> Products { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

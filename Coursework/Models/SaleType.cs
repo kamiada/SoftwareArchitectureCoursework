@@ -9,6 +9,10 @@ namespace Coursework.Models
 {
     public class SaleType
     {
+        [Key]
+        public int ID { get; set; }
+        public string saleType { get; set; }
+        public virtual ICollection<Product>Products { get; set; }
 
     }
 }

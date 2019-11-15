@@ -12,5 +12,7 @@ namespace Coursework.Models
         public int Price { get; set; }
         public int Quantity { get; set; }
        public string TypeOfSale { get; set; }
+
+        public virtual SaleType GetSetSaleType { get; set; }
     }
 }
