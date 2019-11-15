@@ -9,16 +9,16 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <div class="containerr">
+            <div class="navbar-header">
+                <button name="Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("DE-Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Manage Customers", "Index", "Customers")</li>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
