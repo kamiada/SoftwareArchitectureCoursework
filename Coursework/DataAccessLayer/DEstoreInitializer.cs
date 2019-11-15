@@ -22,14 +22,14 @@ namespace Coursework.DataAccessLayer
             context.SaveChanges();
 
 
-            var products = new List<Produkt>
-            {
-                new Produkt{Price=100, Name="Paint", Quantity=34,SaleType="Not Implemented Yet" },
-                new Produkt{Price=50,Name="Christmas tree",Quantity=67,SaleType="Not Implemented Yet" },
-                new Produkt{Price=20,Name="Wood cutter",Quantity=80,SaleType="Not Implemented Yet" },
-                new Produkt{Price=10,Name="Chimney",Quantity=100,SaleType="Not Implemented Yet" },
-            };
-            products.ForEach(s => context.Produkts.Add(s));
+            //var products = new List<Product>
+            //{
+            //    new Product{Price=100, Name="Paint", Quantity=34,SaleType="Not Implemented Yet" },
+            //    new Product{Price=50,Name="Christmas tree",Quantity=67,SaleType="Not Implemented Yet" },
+            //    new Product{Price=20,Name="Wood cutter",Quantity=80,SaleType="Not Implemented Yet" },
+            //    new Product{Price=10,Name="Chimney",Quantity=100,SaleType="Not Implemented Yet" },
+            //};
+            //  products.ForEach(s => context.Product.Add(s));
             context.SaveChanges();
         }
     }
