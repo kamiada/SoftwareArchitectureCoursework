@@ -17,8 +17,15 @@ namespace Coursework.Migrations
                         type = c.String(),
                     })
                 .PrimaryKey(t => t.sale_id);
-            
-            AddColumn("dbo.Product", "sale_id", c => c.Int(nullable: false));
+
+            // Create  a department for course to point to.
+            Sql("INSERT INTO dbo.Sale (type) VALUES ('Temp')");
+            //  default value for FK points to department created above.
+            AddColumn("dbo.Product", "sale_id", c => c.Int(nullable: false, defaultValue: 1));
+            //AddColumn("dbo.Course", "DepartmentID", c => c.Int(nullable: false))
+            // AddColumn("dbo.Product", "sale_id", c => c.Int(nullable: false));
+
+
             CreateIndex("dbo.Product", "sale_id");
             AddForeignKey("dbo.Product", "sale_id", "dbo.Sale", "sale_id", cascadeDelete: true);
             DropColumn("dbo.Product", "TypeOfSale");

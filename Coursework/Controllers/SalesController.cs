@@ -11,112 +11,107 @@ using Coursework.Models;
 
 namespace Coursework.Controllers
 {
-    public class ProductsController : Controller
+    public class SalesController : Controller
     {
         private DEstoreContext db = new DEstoreContext();
 
-        // GET: Products
+        // GET: Sales
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Sale);
-            return View(products.ToList());
+            return View(db.SaleTypes.ToList());
         }
 
-        // GET: Products/Details/5
+        // GET: Sales/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Sale sale = db.SaleTypes.Find(id);
+            if (sale == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(sale);
         }
 
-        // GET: Products/Create
+        // GET: Sales/Create
         public ActionResult Create()
         {
-            ViewBag.sale_id = new SelectList(db.SaleTypes, "sale_id", "type");
             return View();
         }
 
-        // POST: Products/Create
+        // POST: Sales/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Price,Quantity,sale_id")] Product product)
+        public ActionResult Create([Bind(Include = "sale_id,type")] Sale sale)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
+                db.SaleTypes.Add(sale);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.sale_id = new SelectList(db.SaleTypes, "sale_id", "type", product.sale_id);
-            return View(product);
+            return View(sale);
         }
 
-        // GET: Products/Edit/5
+        // GET: Sales/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Sale sale = db.SaleTypes.Find(id);
+            if (sale == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.sale_id = new SelectList(db.SaleTypes, "sale_id", "type", product.sale_id);
-            return View(product);
+            return View(sale);
         }
 
-        // POST: Products/Edit/5
+        // POST: Sales/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Price,Quantity,sale_id")] Product product)
+        public ActionResult Edit([Bind(Include = "sale_id,type")] Sale sale)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(sale).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.sale_id = new SelectList(db.SaleTypes, "sale_id", "type", product.sale_id);
-            return View(product);
+            return View(sale);
         }
 
-        // GET: Products/Delete/5
+        // GET: Sales/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Sale sale = db.SaleTypes.Find(id);
+            if (sale == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(sale);
         }
 
-        // POST: Products/Delete/5
+        // POST: Sales/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            Sale sale = db.SaleTypes.Find(id);
+            db.SaleTypes.Remove(sale);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
