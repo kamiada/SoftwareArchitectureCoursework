@@ -110,6 +110,7 @@ namespace Coursework.Controllers
                         if (result == DialogResult.Cancel)
                         {
                         }
+                        db.Entry(customer).Property(u => u.BuyNowPayLater).CurrentValue = false;
                     }
                 }
                 else
