@@ -135,6 +135,12 @@ namespace Coursework.Controllers
                     }
                     else
                     {
+
+                    }
+
+                    if (db.Entry(customer).Property(u => u.LoyaltyCard).CurrentValue == true &&
+                        db.Entry(customer).Property(u => u.History).CurrentValue != "1000 Stakes, 100 Shovels")
+                    {
                         string message = "This customer history shows that he/she is not applicable for Loyalty Card";
                         string caption = "Loyalty Card";
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -145,6 +151,7 @@ namespace Coursework.Controllers
                         if (result == DialogResult.Cancel)
                         {
                         }
+                        db.Entry(customer).Property(u => u.LoyaltyCard).CurrentValue = false;
                     }
                 }
 
