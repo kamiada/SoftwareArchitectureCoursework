@@ -8,6 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using Coursework.DataAccessLayer;
 using Coursework.Models;
+using System.Windows;
+using System.Web.Services.Description;
+using System.Xml;
+using System.Windows.Forms;
 
 namespace Coursework.Controllers
 {
@@ -77,6 +81,10 @@ namespace Coursework.Controllers
         // POST: Customers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,History,LoyaltyCard,BuyNowPayLater")] Customer customer)
@@ -84,8 +92,21 @@ namespace Coursework.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(customer).State = EntityState.Modified;
+                if (db.Entry(customer).Property("BuyNowPayLater").IsModified == true)
+                {
+                    //Console.WriteLine("BuyNowPayLater was modified");
+                    string message = "Connecting to Enabling system for Finance Approval";
+                    string caption = "Finance Approval Requested";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result;
 
-
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                    }
+                }
+        
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
