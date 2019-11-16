@@ -12,6 +12,8 @@ using System.Windows;
 using System.Web.Services.Description;
 using System.Xml;
 using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
+
 
 namespace Coursework.Controllers
 {
@@ -91,11 +93,31 @@ namespace Coursework.Controllers
         {
             if (ModelState.IsValid)
             {
+                //this line checks if something was modified 
                 db.Entry(customer).State = EntityState.Modified;
-                if (db.Entry(customer).Property("BuyNowPayLater").IsModified == true)
+
+                if (db.Entry(customer).Property(u=>u.BuyNowPayLater).IsModified)
                 {
-                    //Console.WriteLine("BuyNowPayLater was modified");
-                    string message = "Connecting to Enabling system for Finance Approval";
+                    if (db.Entry(customer).Property(u => u.BuyNowPayLater).CurrentValue == true)
+                    {
+                        string message = "Connecting to Enabling system for Finance Approval";
+                        string caption = "Finance Approval Requested";
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        DialogResult result;
+
+                        // Displays the MessageBox.
+                        result = MessageBox.Show(message, caption, buttons);
+                        if (result == DialogResult.Cancel)
+                        {
+                        }
+                    }
+
+
+
+                }
+                else
+                {
+                    string message = "WTF";
                     string caption = "Finance Approval Requested";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
@@ -106,7 +128,9 @@ namespace Coursework.Controllers
                     {
                     }
                 }
-        
+
+
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
