@@ -129,7 +129,6 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\SaleTypesController.cs" />
     <Compile Include="DataAccessLayer\DEstoreContext.cs" />
     <Compile Include="DataAccessLayer\DEstoreInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,10 +138,18 @@
     <Compile Include="Migrations\201911151913186_InitialCreate.Designer.cs">
       <DependentUpon>201911151913186_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911152100130_InitialCreate1.cs" />
+    <Compile Include="Migrations\201911152100130_InitialCreate1.Designer.cs">
+      <DependentUpon>201911152100130_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911160036367_ComplexDataModel.cs" />
+    <Compile Include="Migrations\201911160036367_ComplexDataModel.Designer.cs">
+      <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\SaleType.cs" />
+    <Compile Include="Models\Sale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,11 +193,6 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\SaleTypes\Create.cshtml" />
-    <Content Include="Views\SaleTypes\Delete.cshtml" />
-    <Content Include="Views\SaleTypes\Details.cshtml" />
-    <Content Include="Views\SaleTypes\Edit.cshtml" />
-    <Content Include="Views\SaleTypes\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
@@ -216,6 +218,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911151913186_InitialCreate.resx">
       <DependentUpon>201911151913186_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911152100130_InitialCreate1.resx">
+      <DependentUpon>201911152100130_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911160036367_ComplexDataModel.resx">
+      <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

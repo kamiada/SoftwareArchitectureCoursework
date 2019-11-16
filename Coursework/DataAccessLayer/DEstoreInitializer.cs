@@ -31,6 +31,7 @@ namespace Coursework.DataAccessLayer
             };
             products.ForEach(s => context.Products.Add(s));
             context.SaveChanges();
+            
         }
     }
 }

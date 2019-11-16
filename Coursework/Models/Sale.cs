@@ -7,12 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Coursework.Models
 {
-    public class SaleType
-    {
-        [Key]
-        public int ID { get; set; }
-        public string saleType { get; set; }
-        public virtual ICollection<Product>Products { get; set; }
+    public class Sale
+    {   [Key]
+        public int sale_id { get; set; }
+        public string type { get; set; }
 
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
