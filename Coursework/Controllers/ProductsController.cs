@@ -96,12 +96,12 @@ namespace Coursework.Controllers
                     if (db.Entry(product).Property(u => u.Quantity).CurrentValue < 10)
                     {
                         string message = "Low stock";
-                        string caption = "Product is low in stock, it is advised to order more of the product";
-                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        string caption = "Product is low in stock, more product is going to be ordered from the headquarters";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
                         DialogResult result;
                         // Displays the MessageBox.
                         result = MessageBox.Show(message, caption, buttons);
-                        if (result == DialogResult.Cancel)
+                        if (result == DialogResult.OK)
                         {
                         }
                     }
@@ -109,10 +109,6 @@ namespace Coursework.Controllers
                 else
                 {
                 }
-
-
-
-
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
