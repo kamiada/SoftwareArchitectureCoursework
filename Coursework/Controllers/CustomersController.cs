@@ -95,7 +95,7 @@ namespace Coursework.Controllers
             {
                 //this line checks if something was modified 
                 db.Entry(customer).State = EntityState.Modified;
-
+                //if BuyNowPayLater option is set to true, pop up message box, if not don't do anything
                 if (db.Entry(customer).Property(u=>u.BuyNowPayLater).IsModified)
                 {
                     if (db.Entry(customer).Property(u => u.BuyNowPayLater).CurrentValue == true)
@@ -111,22 +111,9 @@ namespace Coursework.Controllers
                         {
                         }
                     }
-
-
-
                 }
                 else
                 {
-                    string message = "WTF";
-                    string caption = "Finance Approval Requested";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    DialogResult result;
-
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                    if (result == DialogResult.Yes)
-                    {
-                    }
                 }
 
 

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Coursework.DataAccessLayer;
 using Coursework.Models;
+using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
 
 namespace Coursework.Controllers
 {
@@ -88,6 +90,30 @@ namespace Coursework.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;
+
+                if (db.Entry(product).Property(u => u.Quantity).IsModified)
+                {
+                    if (db.Entry(product).Property(u => u.Quantity).CurrentValue < 10)
+                    {
+                        string message = "Low stock";
+                        string caption = "Product is low in stock, it is advised to order more of the product";
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        DialogResult result;
+                        // Displays the MessageBox.
+                        result = MessageBox.Show(message, caption, buttons);
+                        if (result == DialogResult.Cancel)
+                        {
+                        }
+                    }
+                }
+                else
+                {
+                }
+
+
+
+
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
