@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201911160036367_ComplexDataModel.Designer.cs">
       <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911161850130_WeeChangesInData.cs" />
+    <Compile Include="Migrations\201911161850130_WeeChangesInData.Designer.cs">
+      <DependentUpon>201911161850130_WeeChangesInData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
@@ -231,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911160036367_ComplexDataModel.resx">
       <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911161850130_WeeChangesInData.resx">
+      <DependentUpon>201911161850130_WeeChangesInData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

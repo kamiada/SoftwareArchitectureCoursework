@@ -12,5 +12,6 @@ namespace Coursework.Models
         public string History { get; set; }
         public bool LoyaltyCard { get; set; }
         public bool BuyNowPayLater { get; set; }
+        //public virtual ICollection<Product> History_Of_Purchases { get; set; }
     }
 }

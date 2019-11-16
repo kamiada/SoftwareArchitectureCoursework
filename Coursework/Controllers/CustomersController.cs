@@ -116,6 +116,37 @@ namespace Coursework.Controllers
                 {
                 }
 
+                //for Loyalty Card
+                if (db.Entry(customer).Property(u => u.LoyaltyCard).IsModified)
+                {
+                    if (db.Entry(customer).Property(u => u.LoyaltyCard).CurrentValue == true &&
+                        db.Entry(customer).Property(u=>u.History).CurrentValue== "1000 Stakes, 100 Shovels")
+                    {
+                        string message = "Loyalty Card has been added to this customer profile";
+                        string caption = "Loyalty Card";
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        DialogResult result;
+
+                        // Displays the MessageBox.
+                        result = MessageBox.Show(message, caption, buttons);
+                        if (result == DialogResult.Cancel)
+                        {
+                        }
+                    }
+                    else
+                    {
+                        string message = "This customer history shows that he/she is not applicable for Loyalty Card";
+                        string caption = "Loyalty Card";
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        DialogResult result;
+
+                        // Displays the MessageBox.
+                        result = MessageBox.Show(message, caption, buttons);
+                        if (result == DialogResult.Cancel)
+                        {
+                        }
+                    }
+                }
 
 
                 db.SaveChanges();

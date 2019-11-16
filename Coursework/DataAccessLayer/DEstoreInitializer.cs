@@ -11,15 +11,15 @@ namespace Coursework.DataAccessLayer
     {
         protected override void Seed(DEstoreContext context)
         {
-            var customers = new List<Customer>
-            {
-                new Customer{Name="Edgar Poe", History="In Testing", BuyNowPayLater=true,LoyaltyCard=true},
-                new Customer{Name="Wilhelmina Harker", History="To be told", BuyNowPayLater=false,LoyaltyCard=false},
-                new Customer{Name="Laura Le Fanu",History="I will figure it out later",BuyNowPayLater=false,LoyaltyCard=true },
-            };
+            //var customers = new List<Customer>
+            //{
+            //    new Customer{Name="Edgar Poe", History="10 Shovels, 20 Chimneys, 50 beds", BuyNowPayLater=false,LoyaltyCard=false},
+            //    new Customer{Name="Wilhelmina Harker", History="1000 Stakes, 100 Shovels", BuyNowPayLater=false,LoyaltyCard=false},
+            //    new Customer{Name="Laura Le Fanu",History="1 bed, 3 white paints, 5 curtains in colour blue",BuyNowPayLater=false,LoyaltyCard=false },
+            //};
 
-            customers.ForEach(s => context.Customers.Add(s));
-            context.SaveChanges();
+            //customers.ForEach(s => context.Customers.Add(s));
+            //context.SaveChanges();
 
 
             var products = new List<Product>
