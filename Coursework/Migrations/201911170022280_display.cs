@@ -3,7 +3,7 @@ namespace Coursework.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class WeeChangesInData : DbMigration
+    public partial class display : DbMigration
     {
         public override void Up()
         {

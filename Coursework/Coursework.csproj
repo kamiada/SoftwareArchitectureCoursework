@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="DataAccessLayer\DEstoreContext.cs" />
     <Compile Include="DataAccessLayer\DEstoreInitializer.cs" />
@@ -148,13 +149,22 @@
     <Compile Include="Migrations\201911160036367_ComplexDataModel.Designer.cs">
       <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911161850130_WeeChangesInData.cs" />
-    <Compile Include="Migrations\201911161850130_WeeChangesInData.Designer.cs">
-      <DependentUpon>201911161850130_WeeChangesInData.cs</DependentUpon>
+    <Compile Include="Migrations\201911170022280_display.cs" />
+    <Compile Include="Migrations\201911170022280_display.Designer.cs">
+      <DependentUpon>201911170022280_display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911170024587_display1.cs" />
+    <Compile Include="Migrations\201911170024587_display1.Designer.cs">
+      <DependentUpon>201911170024587_display1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911170131132_testingReport.cs" />
+    <Compile Include="Migrations\201911170131132_testingReport.Designer.cs">
+      <DependentUpon>201911170131132_testingReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -209,6 +219,11 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Reports\Create.cshtml" />
+    <Content Include="Views\Reports\Delete.cshtml" />
+    <Content Include="Views\Reports\Details.cshtml" />
+    <Content Include="Views\Reports\Edit.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -236,8 +251,14 @@
     <EmbeddedResource Include="Migrations\201911160036367_ComplexDataModel.resx">
       <DependentUpon>201911160036367_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911161850130_WeeChangesInData.resx">
-      <DependentUpon>201911161850130_WeeChangesInData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911170022280_display.resx">
+      <DependentUpon>201911170022280_display.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911170024587_display1.resx">
+      <DependentUpon>201911170024587_display1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911170131132_testingReport.resx">
+      <DependentUpon>201911170131132_testingReport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

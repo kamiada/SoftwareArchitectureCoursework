@@ -7,13 +7,13 @@ namespace Coursework.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class WeeChangesInData : IMigrationMetadata
+    public sealed partial class display1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(WeeChangesInData));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(display1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911161850130_WeeChangesInData"; }
+            get { return "201911170024587_display1"; }
         }
         
         string IMigrationMetadata.Source

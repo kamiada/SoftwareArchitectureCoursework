@@ -22,6 +22,26 @@ namespace Coursework.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            //var buy_now_pay_later = new List<BuyNowPayLater>
+            //{
+            //    new BuyNowPayLater{status="Enabled" },
+            //    new BuyNowPayLater{status="Disabled"}
+            //};
+            //buy_now_pay_later.ForEach(s => context.Status.AddOrUpdate(p => p.status, s));
+            //context.SaveChanges();
+
+            //var customers1 = new List<Customer1>
+            //{
+            //    new Customer1{Name="Johnatan Harker",Loyalty_Card=false,
+            //    customer_id = buy_now_pay_later.FirstOrDefault  (s=>s.status=="Disabled").bnpl_id},
+            //    new Customer1{Name="Mina Harker",Loyalty_Card=false,
+            //    customer_id = buy_now_pay_later.FirstOrDefault  (s=>s.status=="Enabled").bnpl_id },
+            //    new Customer1{Name="Edgar Allan Poe",Loyalty_Card=false,
+            //    customer_id = buy_now_pay_later.FirstOrDefault  (s=>s.status=="Disabled").bnpl_id }
+            //};
+            //customers1.ForEach(s => context.Customer1s.AddOrUpdate(p => p.bnpl_id, s));
+            //context.SaveChanges();
+
             var sale_types = new List<Sale>
             {
                 new Sale{type="3 for 2"},
@@ -51,22 +71,6 @@ namespace Coursework.Migrations
             products.ForEach(s => context.Products.AddOrUpdate(p => p.sale_id, s));
             context.SaveChanges();
 
-            //var customers = new List<Customer>
-            //{
-            //    new Customer{Name="Johnatan Harker",BuyNowPayLater=false,LoyaltyCard=false,
-            //    ID = products.Single(s =>s.Name=="Dowel").ID},
-            //    new Customer{ Name="Mina Harker",BuyNowPayLater=false,LoyaltyCard=false,
-            //    ID = products.Single(s =>s.Name=="Chimney").ID},
-            //    new Customer{ Name="Edgar Allan Poe",BuyNowPayLater=false,LoyaltyCard=false,
-            //    ID = products.Single(s =>s.Name=="Shovel").ID},
-            //    new Customer{ Name="Niccolo Macchiavelli",BuyNowPayLater=false,LoyaltyCard=false,
-            //    ID = products.Single(s =>s.Name=="Knives").ID},
-            //    new Customer{ Name="Fredrich Metternich",BuyNowPayLater=false,LoyaltyCard=false,
-            //    ID = products.Single(s =>s.Name=="Tanks").ID}
-            //};
-            //products.ForEach(s => context.Customers.AddOrUpdate(p => p.History_Of_Purchases,s));
-            //context.SaveChanges();
-
             var customers = new List<Customer>
             {
                 new Customer{Name="Edgar Poe", History="10 Shovels, 20 Chimneys, 50 beds", BuyNowPayLater=false,LoyaltyCard=false},
@@ -75,6 +79,24 @@ namespace Coursework.Migrations
             };
 
             customers.ForEach(s => context.Customers.Add(s));
+            context.SaveChanges();
+
+            var reports = new List<Report>
+            {
+                new Report{customer_name="Ingrid",customer_surname="Bergsman",Date=DateTime.Parse("2018-08-12"),
+                product_name="Chimney",product_quantity=10},
+                new Report{customer_name="Ingrid",customer_surname="Bergsman",Date=DateTime.Parse("2018-08-21"),
+                product_name="Mirror",product_quantity=1},
+                new Report{customer_name="Ingrid",customer_surname="Bergsman",Date=DateTime.Parse("2018-09-01"),
+                product_name="Vase",product_quantity=5},
+                new Report{customer_name="Victor",customer_surname="Crumm",Date=DateTime.Parse("2018-09-25"),
+                product_name="Ladder",product_quantity=1},
+                new Report{customer_name="Victor",customer_surname="Crumm",Date=DateTime.Parse("2018-10-27"),
+                product_name="Window frame",product_quantity=4},
+               new Report{customer_name="Victor",customer_surname="Crumm",Date=DateTime.Parse("2018-10-30"),
+                product_name="Box",product_quantity=120},
+            };
+            reports.ForEach(s => context.Reports.Add(s));
             context.SaveChanges();
 
         }

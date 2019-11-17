@@ -20,6 +20,8 @@ namespace Coursework.DataAccessLayer
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<Coursework.Models.Report> Reports { get; set; }
     }
 
 }
