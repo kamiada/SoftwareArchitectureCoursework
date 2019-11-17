@@ -16,6 +16,7 @@ namespace Coursework.DataAccessLayer
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Sale> SaleTypes { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ReportAndAnalysis> ReportsAndAnalysis { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

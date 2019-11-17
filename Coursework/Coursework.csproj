@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReportAndAnalysisController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="DataAccessLayer\DEstoreContext.cs" />
@@ -161,10 +162,15 @@
     <Compile Include="Migrations\201911170131132_testingReport.Designer.cs">
       <DependentUpon>201911170131132_testingReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911172148435_testing.cs" />
+    <Compile Include="Migrations\201911172148435_testing.Designer.cs">
+      <DependentUpon>201911172148435_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\ReportAndAnalysis.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,6 +230,11 @@
     <Content Include="Views\Reports\Details.cshtml" />
     <Content Include="Views\Reports\Edit.cshtml" />
     <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Create.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Delete.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Details.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Edit.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -259,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911170131132_testingReport.resx">
       <DependentUpon>201911170131132_testingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911172148435_testing.resx">
+      <DependentUpon>201911172148435_testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

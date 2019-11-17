@@ -99,6 +99,24 @@ namespace Coursework.Migrations
             reports.ForEach(s => context.Reports.Add(s));
             context.SaveChanges();
 
+
+            var reports_and_analysis = new List<ReportAndAnalysis>
+            { 
+                new ReportAndAnalysis {store_name="Edinburgh", Date=DateTime.Parse("2019-01-01"),
+                no_of_customers=150, no_sold_items=560},
+                new ReportAndAnalysis {store_name="Edinburgh", Date=DateTime.Parse("2019-02-01"),
+                no_of_customers=230, no_sold_items=1023},
+                new ReportAndAnalysis {store_name="Edinburgh", Date=DateTime.Parse("2019-03-01"),
+                no_of_customers=345, no_sold_items=1567},
+                new ReportAndAnalysis {store_name="Glasgow", Date=DateTime.Parse("2019-01-01"),
+                no_of_customers=78, no_sold_items=125},
+                new ReportAndAnalysis {store_name="Glasgow", Date=DateTime.Parse("2019-02-01"),
+                no_of_customers=45, no_sold_items=234},
+                new ReportAndAnalysis {store_name="Glasgow", Date=DateTime.Parse("2019-03-01"),
+                no_of_customers=145, no_sold_items=789},
+            };
+            reports_and_analysis.ForEach(s => context.ReportsAndAnalysis.Add(s));
+            context.SaveChanges();
         }
     }
 }
